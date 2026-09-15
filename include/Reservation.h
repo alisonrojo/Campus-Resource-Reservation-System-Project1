@@ -12,7 +12,20 @@ private:
     string student_Name;
     string resource_ID;
     string reservation_Date;
+public:
+    Reservation();
+    //creating a constructor
+    Reservation(string reservation_ID,
+    string student_ID,
+    string student_Name,
+    string resource_ID,
+    string reservation_Date);
 
+    string getReservationID();
+    string getStudentID();
+    string getStudentName();
+    string getResourceID();
+    string getReservationDate();
 
 };
 
