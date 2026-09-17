@@ -16,6 +16,7 @@ class Resource {
     string getResourceName() const;
     string getResourceType() const;
     bool getAvailability() const;
+    void DisplayResources() const;
 };
 
 #endif
