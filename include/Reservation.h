@@ -15,17 +15,17 @@ private:
 public:
     Reservation();
     //creating a constructor
-    Reservation(string reservation_ID,
-    string student_ID,
-    string student_Name,
-    string resource_ID,
-    string reservation_Date);
+    Reservation(const string& inc_reservation_ID,
+    const string& inc_student_ID,
+    const string& inc_student_Name,
+    const string& inc_resource_ID,
+    const string& inc_reservation_Date);
 
-    string getReservationID();
-    string getStudentID();
-    string getStudentName();
-    string getResourceID();
-    string getReservationDate();
+    string getReservationID() const;
+    string getStudentID() const;
+    string getStudentName() const;
+    string getResourceID() const;
+    string getReservationDate() const;
 
 };
 
