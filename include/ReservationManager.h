@@ -32,7 +32,7 @@ public:
     //displaying all active reservation
     void displayReservations();
 
-    //if reservation ID exists alread
+    //if reservation ID exists already
     bool reservationExists(string reservationID);
     //if a resource ID is valid
     bool validResource(string resourceID);
