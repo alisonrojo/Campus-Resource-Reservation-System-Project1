@@ -7,6 +7,21 @@
 using std::string;
 
 class ReservationManager {
+private:
+    //node for linked list
+    struct Node {
+        Reservation reservation;
+        Node* next;
+
+        Node(Reservation r) {
+            reservation = r;
+            next = nullptr;     
+        }
+    };
+
+    //points to the first reservation in linked list
+    Node* head;
+
 public:
     ReservationManager(); //constructor
 
