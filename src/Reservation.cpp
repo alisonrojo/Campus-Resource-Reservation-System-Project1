@@ -17,7 +17,7 @@ Reservation::Reservation(
     resource_ID = inc_resource_ID;
     reservation_Date = inc_reservation_Date;
 }
-
+// each getter should return the right data.
 string Reservation::getReservationID() const{
     return reservation_ID;
 }
