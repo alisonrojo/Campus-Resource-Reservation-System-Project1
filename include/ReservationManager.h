@@ -20,7 +20,7 @@ public:
     //if reservation ID exists alread
     bool reservationExists(string reservationID);
     //if a resource ID is valid
-    bool validResourc(string resourceID);
+    bool validResource(string resourceID);
 };
 
 #endif
