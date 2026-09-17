@@ -7,6 +7,21 @@
 using std::string;
 
 class ReservationManager {
+private:
+    //node for linked list
+    struct Node {
+        Reservation reservation;
+        Node* next;
+
+        Node(Reservation r) {
+            reservation = r;
+            next = nullptr;     
+        }
+    };
+
+    //points to the first reservation in linked list
+    Node* head;
+
 public:
     ReservationManager(); //constructor
 
@@ -17,10 +32,10 @@ public:
     //displaying all active reservation
     void displayReservations();
 
-    //if reservation ID exists alread
+    //if reservation ID exists already
     bool reservationExists(string reservationID);
     //if a resource ID is valid
-    bool validResourc(string resourceID);
+    bool validResource(string resourceID);
 };
 
 #endif
