@@ -47,7 +47,7 @@ void ReservationManager::createReservation(Reservation reservation) {
 }
 
 //cancel a reservation
-void ReservationManager::cancelReservation string reservationID) {
+void ReservationManager::cancelReservation (string reservationID) {
 
     if (head == nullptr) {
         cout << "No reservations found." << endl;
