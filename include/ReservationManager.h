@@ -4,6 +4,7 @@
 #include <string>
 #include "Reservation.h"
 #include "ReservationList.h"
+#include "CancellationHistory.h"
 
 using std::string;
 
@@ -18,6 +19,7 @@ private:
             reservation = r;
             next = nullptr;     
         }*/
+       CancellationHistory cancellationHistory;
        ReservationList reservations;
     
 
@@ -38,6 +40,8 @@ public:
     bool reservationExists(string reservationID);
     //if a resource ID is valid
     bool validResource(string resourceID);
+
+    void displayCancellationHistory() const;
 };
 
 #endif

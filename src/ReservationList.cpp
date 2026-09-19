@@ -123,4 +123,18 @@ void ReservationList::display() {
 
         current = current->next;
     }
+
+}
+bool ReservationList::find(const string& reservationID, Reservation& outputReservation) const{
+    const Node* current = head;
+
+    while (current != nullptr) {
+        if (current->reservation.getReservationID() == reservationID) {
+            outputReservation = current->reservation;
+            return true;
+        }
+
+        current = current->next;
+    }
+    return false;
 }
