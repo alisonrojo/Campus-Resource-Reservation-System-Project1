@@ -9,7 +9,7 @@ ReservationList::ReservationList() {
 }
 
 //destructor
-Reservation::~ReservationList() {
+ReservationList::~ReservationList() {
     Node* current = head;
 
     while (current != nullptr) {
@@ -31,7 +31,7 @@ void ReservationList::insert(Reservation reservation) {
     //move to end of list
     Node* current = head;
 
-    While (current->next != nullptr) {
+    while (current->next != nullptr) {
         current = current->next;
     }
 

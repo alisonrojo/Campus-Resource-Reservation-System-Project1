@@ -23,7 +23,7 @@ private:
 
 public:
     //constructor
-    ResrvationList();
+    ReservationList();
     //destructor
     ~ReservationList();
     //add reservation to list
