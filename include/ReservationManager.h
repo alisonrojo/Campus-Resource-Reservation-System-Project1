@@ -3,24 +3,14 @@
 
 #include <string>
 #include "Reservation.h"
+#include "ReservationList.h"
 
 using std::string;
 
 class ReservationManager {
 private:
-    //node for linked list
-    struct Node {
-        Reservation reservation;
-        Node* next;
-
-        Node(Reservation r) {
-            reservation = r;
-            next = nullptr;     
-        }
-    };
-
-    //points to the first reservation in linked list
-    Node* head;
+    //linked list of active reser.
+    ReservationList reservations;
 
 public:
     ReservationManager(); //constructor

@@ -1,0 +1,39 @@
+#ifndef RESERVATIONLIST_H
+#define RESERVATIONLIST_H
+
+#include "Reservation.h"
+#include <string>
+
+using std::string;
+
+class ReservationList {
+private:
+    struct Node {
+        Reservation reservation;
+        Node* next;
+
+        Node(Reservation r) {
+            reservation = r;
+            next = nullptr;
+        }
+    };
+
+    //points to first node
+    Node* head;
+
+public:
+    //constructor
+    ResrvationList();
+    //destructor
+    ~ReservationList();
+    //add reservation to list
+    void insert(Reservation reservation);
+    //remove reservation
+    bool remove(string reservationID);
+    //search for reserID
+    bool search(string reservationID);
+    //display all reser
+    void display();
+};
+
+#endif
