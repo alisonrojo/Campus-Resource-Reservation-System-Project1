@@ -44,7 +44,6 @@ void ReservationManager::displayReservations() {
 
 //check if resource ID is valid
 bool ReservationManager::validResource (string resourceID) {
-    rokayeturn false;
+    return false;
 }
 
-}
