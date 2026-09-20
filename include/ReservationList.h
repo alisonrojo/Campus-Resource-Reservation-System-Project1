@@ -34,6 +34,7 @@ public:
     bool search(string reservationID);
     //display all reser
     void display();
+    bool find(const string& reservationID, Reservation& outputReservation) const;
 };
 
 #endif

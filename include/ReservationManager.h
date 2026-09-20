@@ -3,24 +3,28 @@
 
 #include <string>
 #include "Reservation.h"
+#include "ReservationList.h"
+#include "CancellationHistory.h"
 
 using std::string;
 
 class ReservationManager {
 private:
     //node for linked list
-    struct Node {
+    /*struct Node {
         Reservation reservation;
         Node* next;
 
         Node(Reservation r) {
             reservation = r;
             next = nullptr;     
-        }
-    };
+        }*/
+       CancellationHistory cancellationHistory;
+       ReservationList reservations;
+    
 
     //points to the first reservation in linked list
-    Node* head;
+    //Node* head;
 
 public:
     ReservationManager(); //constructor
@@ -36,6 +40,8 @@ public:
     bool reservationExists(string reservationID);
     //if a resource ID is valid
     bool validResource(string resourceID);
+
+    void displayCancellationHistory() const;
 };
 
 #endif
