@@ -9,6 +9,7 @@ using namespace std;
 int main() {
 
     ReservationManager manager;
+    WaitingList WaitList;
     int choice = 0;
     do {
         cout << "\n Campus Resource Reservation System" << endl;
@@ -65,6 +66,8 @@ int main() {
 
             cout << "Enter student name: ";
             getline(cin, studentName);
+
+            WaitList.AddStudent(studentName);
 
             cout << "Enter resource ID: ";
             cin >> resourceID;
