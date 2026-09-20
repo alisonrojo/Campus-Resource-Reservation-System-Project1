@@ -16,6 +16,7 @@ class Resource {
     string getResourceName() const;
     string getResourceType() const;
     string getAvailability() const;
+    void ReadFile();
     void DisplayResources() const;
 };
 
