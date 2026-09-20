@@ -32,6 +32,20 @@ string Resource::getAvailability() const {
     return Availability;
 }
 
+void Resource::ReadFile() {
+    ifstream resources;
+    file.open("resources.txt");
+    while (getline(file, ResourceID, '|')) {
+        getline(file, ResourceName, '|');
+        getline(file, ResourceType, '|');
+        getline(file, Availability);
+
+        DisplayResources();
+        cout << endl;
+    }
+ file.close()
+}
+
 void Resource::DisplayResources() const {
     cout << "Resource ID: " << ResourceID << endl;
     cout << "Resource Name: " << ResourceName << endl;
