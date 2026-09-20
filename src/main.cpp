@@ -100,8 +100,8 @@ int main() {
         //waiting list function
         }
 
-        else if {
-            cout << "Choose an option from 1 through 7.\n";
+        else if (choice == 7) {
+            cout << "Goodbye!" << endl;
         }
         
         else {
