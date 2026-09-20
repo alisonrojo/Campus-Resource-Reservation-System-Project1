@@ -14,9 +14,11 @@ int main() {
         cout << "1. Create Reservation" << endl;
         cout << "2. Cancel Reservation" << endl;
         cout << "3. Display Active Reservations" << endl;
-        cout << "4. Exit" << endl;
-        cout  << "5. Display Cancellation History\n";
-        cout << "6. Undo Latest Cancellation\n";
+        cout  << "4. Display Cancellation History" << endl;
+        cout << "5. Undo Latest Cancellation" << endl;
+        cout << "6. Display Waiting List" << endl;
+        cout << "7. Exit" << endl;
+        
 
         cout << "Enter your choice: ";
 
@@ -87,22 +89,29 @@ int main() {
         }
 
         else if (choice == 4){
-            cout << "Goodbye. \n";
-        }
-
-        else if (choice == 5){
             manager.displayCancellationHistory();
         }
 
+        else if (choice == 5){
+            manager.undoLastCancellation();
+        }
+
         else if (choice == 6) {
-        manager.undoLastCancellation();
+        //waiting list function
         }
 
+        else {
+            cout << "Choose an option from 1 through 7.\n";
+        }
+        
         else{
-            cout << "Choose an option from 1 through 6. \n";
+            cout << "Choose an option from 1 through 7. \n";
         }
 
-     } while (choice != 4);
+     } while (choice != 7);
+
+     return 0;
+}
 
     
 
