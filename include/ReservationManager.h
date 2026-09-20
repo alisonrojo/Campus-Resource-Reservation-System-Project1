@@ -6,19 +6,11 @@
 #include "ReservationList.h"
 #include "CancellationHistory.h"
 
+
 using std::string;
 
 class ReservationManager {
 private:
-    //node for linked list
-    /*struct Node {
-        Reservation reservation;
-        Node* next;
-
-        Node(Reservation r) {
-            reservation = r;
-            next = nullptr;     
-        }*/
        CancellationHistory cancellationHistory;
        ReservationList reservations;
     
@@ -42,6 +34,8 @@ public:
     bool validResource(string resourceID);
 
     void displayCancellationHistory() const;
+    void undoLastCancellation();
+
 };
 
 #endif

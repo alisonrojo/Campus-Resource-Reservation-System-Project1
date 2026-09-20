@@ -35,6 +35,8 @@ public:
     //display all reser
     void display();
     bool find(const string& reservationID, Reservation& outputReservation) const;
+    
+    bool isBooked(const string& resourceID, const string& date) const;
 };
 
 #endif

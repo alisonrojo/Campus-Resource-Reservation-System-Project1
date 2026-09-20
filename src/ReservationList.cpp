@@ -138,3 +138,19 @@ bool ReservationList::find(const string& reservationID, Reservation& outputReser
     }
     return false;
 }
+
+//adding function to check for active bookings
+//0(n) because it is possible to visit every active reservation
+//must follow a mm/dd/yyyy date format
+
+bool ReservationList::isBooked(const string& resourceID, const string& date) const {
+    const Node* current = head;
+
+    while(current != nullptr) {
+        if(current->reservation.getResourceID() == resourceID && current->reservation.getReservationDate() == date){
+            return true;
+        }
+        current = current->next;
+    }
+    return false;
+}
