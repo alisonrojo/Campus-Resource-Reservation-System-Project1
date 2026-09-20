@@ -6,10 +6,10 @@ Resource::Resource() {
     ResourceID = " ";
     ResourceName = " ";
     ResourceType = " ";
-    Availability = false;
+    Availability = " ";
 }
 
-Resource::Resource(const string& rID, const string& rName, const string& rType, bool rAvl) {
+Resource::Resource(const string& rID, const string& rName, const string& rType, const string& rAvl) {
     ResourceID = rID;
     ResourceName = rName;
     ResourceType = rType;
@@ -28,7 +28,7 @@ string Resource::getResourceType() const {
     return ResourceType;
 }
 
-bool Resource::getAvailability() const {
+string Resource::getAvailability() const {
     return Availability;
 }
 
@@ -36,12 +36,6 @@ void Resource::DisplayResources() const {
     cout << "Resource ID: " << ResourceID << endl;
     cout << "Resource Name: " << ResourceName << endl;
     cout << "Resource Type: " << ResourceType << endl;
-    cout << "Availability: ";
-    if (Availability == true) {
-        cout << "Available" << endl;
-    }
-    else {
-        cout << "Not Available" << endl;
-    }
+    cout << "Availability: " << Availability << endl;
 }
 
