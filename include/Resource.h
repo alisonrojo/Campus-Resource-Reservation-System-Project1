@@ -8,14 +8,14 @@ class Resource {
     string ResourceID;
     string ResourceName;
     string ResourceType;
-    bool Availability;
+    string Availability;
   public:
     Resource();
-    Resource(const string& rID, const string& rName, const string& rType, bool rAvl);
+    Resource(const string& rID, const string& rName, const string& rType, string& rAvl);
     string getResourceID() const;
     string getResourceName() const;
     string getResourceType() const;
-    bool getAvailability() const;
+    string getAvailability() const;
     void DisplayResources() const;
 };
 
