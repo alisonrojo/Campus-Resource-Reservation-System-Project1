@@ -11,13 +11,14 @@ int main() {
     do {
         cout << "\n Campus Resource Reservation System" << endl;
         cout << "-------------------------------------" << endl;
-        cout << "1. Create Reservation" << endl;
-        cout << "2. Cancel Reservation" << endl;
-        cout << "3. Display Active Reservations" << endl;
-        cout  << "4. Display Cancellation History" << endl;
-        cout << "5. Undo Latest Cancellation" << endl;
-        cout << "6. Display Waiting List" << endl;
-        cout << "7. Exit" << endl;
+        cout << "1. View Resources" << endl;
+        cout << "2. Create Reservation" << endl;
+        cout << "3. Cancel Reservation" << endl;
+        cout << "4. Display Active Reservations" << endl;
+        cout  << "5. Display Cancellation History" << endl;
+        cout << "6. Undo Latest Cancellation" << endl;
+        cout << "7. Display Waiting List" << endl;
+        cout << "8. Exit" << endl;
         
 
         cout << "Enter your choice: ";
@@ -39,6 +40,13 @@ int main() {
         }
 
         if (choice == 1) {
+            Resource fileResources;
+
+            fileResources.ReadFile();
+            fileResources.DisplayResources();
+        }
+
+        else if (choice == 2) {
             string reservationID;
             string studentID;
             string studentName;
@@ -75,7 +83,7 @@ int main() {
 
             manager.createReservation(reservation);
          }
-        else if (choice == 2) { 
+        else if (choice == 3) { 
             string reservationID;
 
             cout << "Enter reservation ID to cancel:";
@@ -84,23 +92,23 @@ int main() {
             manager.cancelReservation(reservationID);
         }
 
-        else if (choice == 3) {
+        else if (choice == 4) {
             manager.displayReservations();
         }
 
-        else if (choice == 4){
+        else if (choice == 5){
             manager.displayCancellationHistory();
         }
 
-        else if (choice == 5){
+        else if (choice == 6){
             manager.undoLastCancellation();
         }
 
-        else if (choice == 6) {
+        else if (choice == 7) {
         //waiting list function
         }
 
-        else if (choice == 7) {
+        else if (choice == 8) {
             cout << "Goodbye!" << endl;
         }
         
@@ -108,7 +116,7 @@ int main() {
             cout << "Choose an option from 1 through 7. \n";
         }
 
-     } while (choice != 7);
+     } while (choice != 8);
 
     
 
