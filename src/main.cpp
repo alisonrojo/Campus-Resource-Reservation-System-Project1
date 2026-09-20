@@ -100,13 +100,14 @@ int main() {
         //waiting list function
         }
 
+        else if (choice == 7){
+            cout << "Goodbye \n";
+
+        }
         else {
             cout << "Choose an option from 1 through 7.\n";
         }
         
-        else{
-            cout << "Choose an option from 1 through 7. \n";
-        }
 
      } while (choice != 7);
 
@@ -115,9 +116,3 @@ int main() {
 
     
 
-
-
-
-
-    return 0;
-}
