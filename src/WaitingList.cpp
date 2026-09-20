@@ -11,5 +11,9 @@ void WaitingList::RemoveStudent() {
 }
 
 void WaitingList::Display() {
-  
+  queue<string> list = WaitingList;
+  while (!list.empty()) {
+    cout << list.front() << endl;
+    list.pop();
+  }
 }
