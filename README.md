@@ -7,3 +7,16 @@ This project is a Campus Resource Reservation System written in C++. The program
 ##Features
 
 ##Project Files
+CancellationHistory.h
+Reservation.h
+ReservationManager.h
+Resource.h
+WaitingList.h
+
+CancellationHistory.cpp
+Reservation.cpp
+ReservationList.cpp
+ReservationManager.cpp
+Resource.cpp
+WaitingList.cpp
+main.cpp
