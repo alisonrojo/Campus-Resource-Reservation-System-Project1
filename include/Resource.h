@@ -1,6 +1,7 @@
 #ifndef RESOURCE_H
 #define RESOURCE_H
 #include <string>
+#include <vector>
 using namespace std;
 
 class Resource {
@@ -11,7 +12,7 @@ class Resource {
     string Availability;
   public:
     Resource();
-    Resource(const string& rID, const string& rName, const string& rType, string& rAvl);
+    Resource(const string& rID, const string& rName, const string& rType, const string& rAvl);
     string getResourceID() const;
     string getResourceName() const;
     string getResourceType() const;

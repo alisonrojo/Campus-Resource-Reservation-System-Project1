@@ -1,5 +1,6 @@
 #include "Resource.h"
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 Resource::Resource() {
@@ -34,7 +35,7 @@ string Resource::getAvailability() const {
 
 void Resource::ReadFile() {
     ifstream resources;
-    file.open("resources.txt");
+    resources.open("data/resources.txt");
     while (getline(resources, ResourceID, '|')) {
         getline(resources, ResourceName, '|');
         getline(resources, ResourceType, '|');
@@ -43,7 +44,7 @@ void Resource::ReadFile() {
         DisplayResources();
         cout << endl;
     }
- resources.close()
+ resources.close();
 }
 
 void Resource::DisplayResources() const {

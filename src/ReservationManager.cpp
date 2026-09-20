@@ -17,6 +17,15 @@ void ReservationManager::createReservation(Reservation reservation) {
         cout << "Reservation ID already exists." << endl;
         return;
     }
+    //check for duplicate bookings using id and date
+    if (reservations.isBooked(reservation.getResourceID(),reservation.getReservationDate())) 
+    {
+
+    //output the message to the user
+    cout << "This resource is already booked for that date.\n";
+
+    return;
+    }
 
     //add reser. to linked list
     reservations.insert(reservation);

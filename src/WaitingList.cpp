@@ -7,8 +7,17 @@ void WaitingList::AddStudent(string student) {
 }
 
 void WaitingList::RemoveStudent() {
-  WaitingList.pop();
+
+  // added confirmation output and error handling if the user tries to remove an empty waiting list
+    if (WaitingList.empty()) {
+        cout << "The waiting list is empty.\n";
+        return;
+    }
+
+    WaitingList.pop();
+    cout << "First student removed from the waiting list.\n";
 }
+
 
 void WaitingList::Display() {
   queue<string> list = WaitingList;

@@ -21,6 +21,8 @@ int main() {
         cout  << "5. Display Cancellation History" << endl;
         cout << "6. Undo Latest Cancellation" << endl;
         cout << "7. Display Waiting List" << endl;
+        cout << "9. Add Student to Waiting List\n";
+        cout << "10. Remove First Waiting Student\n";
         cout << "8. Exit" << endl;
         
 
@@ -46,7 +48,7 @@ int main() {
             Resource fileResources;
 
             fileResources.ReadFile();
-            fileResources.DisplayResources();
+            
         }
 
         else if (choice == 2) {
@@ -67,7 +69,7 @@ int main() {
             cout << "Enter student name: ";
             getline(cin, studentName);
 
-            WaitList.AddStudent(studentName);
+            
 
             cout << "Enter resource ID: ";
             cin >> resourceID;
@@ -111,15 +113,51 @@ int main() {
 
         else if (choice == 7) {
         //waiting list function
+        WaitList.Display();
         }
 
         else if (choice == 8) {
             cout << "Goodbye!" << endl;
         }
+        // functionality to add a student to a waiting list
+        // includes error handling to prevent the program from crashing
+        else if (choice == 9) {
+            
+
+            string studentName;
+            string resourceID;
+
+                // Remove the newline left by reading the menu number.
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+            //safely exit the program if no input
+            cout << "Enter student name: ";
+            if (!getline(cin, studentName)) {
+                break;
+            }
+            // same for resource ID
+            cout << "Enter resource ID: ";
+            if (!getline(cin, resourceID)) {
+                break;
+            }
+
+            // if either field is empty then it will trigger because of the or operator
+            if (studentName.empty() || resourceID.empty()) {
+                cout << "Name and resource ID cannot be blank.\n";
+            }
+            // otherwise we can add the information the user inputs
+            else {
+                WaitList.AddStudent(studentName + " | " + resourceID);
+                cout << "Student added to waiting list.\n";
+            }
+            }
+    else if (choice == 10) {
+        WaitList.RemoveStudent();
+    }
         
-        else {
-            cout << "Choose an option from 1 through 7. \n";
-        }
+    else {
+            cout << "Choose an option from 1 through 10. \n";
+    }
 
      } while (choice != 8);
 
