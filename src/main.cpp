@@ -21,9 +21,9 @@ int main() {
         cout  << "5. Display Cancellation History" << endl;
         cout << "6. Undo Latest Cancellation" << endl;
         cout << "7. Display Waiting List" << endl;
-        cout << "9. Add Student to Waiting List\n";
-        cout << "10. Remove First Waiting Student\n";
-        cout << "8. Exit" << endl;
+        cout << "8. Add Student to Waiting List\n";
+        cout << "9. Remove First Waiting Student\n";
+        cout << "10. Exit" << endl;
         
 
         cout << "Enter your choice: ";
@@ -116,12 +116,9 @@ int main() {
         WaitList.Display();
         }
 
-        else if (choice == 8) {
-            cout << "Goodbye!" << endl;
-        }
         // functionality to add a student to a waiting list
         // includes error handling to prevent the program from crashing
-        else if (choice == 9) {
+        else if (choice == 8) {
             
 
             string studentName;
@@ -151,21 +148,19 @@ int main() {
                 cout << "Student added to waiting list.\n";
             }
             }
-    else if (choice == 10) {
+    else if (choice == 9) {
         WaitList.RemoveStudent();
     }
-        
+
+    else if (choice == 10) {
+        cout << "Goodbye!" << endl;
+    }
+    
     else {
             cout << "Choose an option from 1 through 10. \n";
     }
 
-     } while (choice != 8);
-
-    
-
-
-
-
+     } while (choice != 10);
 
     return 0;
 }
