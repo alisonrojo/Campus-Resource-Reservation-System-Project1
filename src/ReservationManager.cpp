@@ -26,16 +26,6 @@ void ReservationManager::createReservation(Reservation reservation) {
 
 //cancel a reservation
 void ReservationManager::cancelReservation(string reservationID) {
-    //try to remove from linked list
-
-   /* bool removed = reservations.remove(reservationID);
-
-    if (removed) {
-        cout << "Reservation cancelled successfully." << endl;
-    }
-    else {
-        cout << "Reservation not found." << endl;
-    }*/
 
    //alternate solution to connect cancellationHistory()
 
@@ -48,10 +38,13 @@ void ReservationManager::cancelReservation(string reservationID) {
 
 }
 
+
+// save a copy before deleting the active-list node
 cancellationHistory.push(canceledReservation);
 
 if (!reservations.remove(reservationID)){
 
+    // since the reservation wasnt removed we undo the history push
     cancellationHistory.pop();
     cout << "Reservation could not be cancelled. \n";
 
@@ -60,6 +53,38 @@ if (!reservations.remove(reservationID)){
 cout << "Reservation cancelled successfully. \n";
 
 } //ending of cancelReservation()
+
+// only restores the newest cancellation
+// failed checks will result in the booking be left in history
+void ReservationManager::undoLastCancellation() {
+    Reservation canceled;
+
+    // Read the newest cancellation without removing it.
+    if (!cancellationHistory.peek(canceled)) {
+        cout << "No cancellation to undo.\n";
+        return;
+    }
+
+    // Prevent restoring a reservation ID that is already active.
+    if (reservations.search(canceled.getReservationID())) {
+        cout << "Cannot undo: reservation ID is already in use.\n";
+        return;
+    }
+
+    // Prevent two bookings for the same resource and date.
+    if (reservations.isBooked(
+            canceled.getResourceID(),
+            canceled.getReservationDate())) {
+        cout << "Cannot undo: resource is booked for that date.\n";
+        return;
+    }
+
+    // Restore first. Remove the history entry only afterward.
+    reservations.insert(canceled);
+    cancellationHistory.pop();
+
+    cout << "Cancellation undone successfully.\n";
+}
 
 
 //Display all active reservations

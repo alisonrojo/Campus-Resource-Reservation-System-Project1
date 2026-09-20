@@ -16,6 +16,7 @@ int main() {
         cout << "3. Display Active Reservations" << endl;
         cout << "4. Exit" << endl;
         cout  << "5. Display Cancellation History\n";
+        cout << "6. Undo Latest Cancellation\n";
 
         cout << "Enter your choice: ";
 
@@ -93,8 +94,12 @@ int main() {
             manager.displayCancellationHistory();
         }
 
+        else if (choice == 6) {
+        manager.undoLastCancellation();
+        }
+
         else{
-            cout << "Choose an option from 1 through 5. \n";
+            cout << "Choose an option from 1 through 6. \n";
         }
 
      } while (choice != 4);
