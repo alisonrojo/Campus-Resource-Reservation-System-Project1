@@ -20,9 +20,9 @@ int main() {
         cout << "4. Display Active Reservations" << endl;
         cout  << "5. Display Cancellation History" << endl;
         cout << "6. Undo Latest Cancellation" << endl;
-        cout << "7. Display Waiting List" << endl;
-        cout << "8. Add Student to Waiting List\n";
-        cout << "9. Remove First Waiting Student\n";
+        cout << "7. Add Student to Waiting List\n";
+        cout << "8. Remove First Waiting Student\n";
+        cout << "9. Display Waiting List" << endl;
         cout << "10. Exit" << endl;
         
 
@@ -111,14 +111,9 @@ int main() {
             manager.undoLastCancellation();
         }
 
-        else if (choice == 7) {
-        //waiting list function
-        WaitList.Display();
-        }
-
         // functionality to add a student to a waiting list
         // includes error handling to prevent the program from crashing
-        else if (choice == 8) {
+        else if (choice == 7) {
             
 
             string studentName;
@@ -148,8 +143,13 @@ int main() {
                 cout << "Student added to waiting list.\n";
             }
             }
-    else if (choice == 9) {
+    else if (choice == 8) {
         WaitList.RemoveStudent();
+    }
+
+    else if (choice == 9) {
+        //waiting list function
+        WaitList.Display();
     }
 
     else if (choice == 10) {
