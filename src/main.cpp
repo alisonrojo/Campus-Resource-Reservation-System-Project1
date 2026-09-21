@@ -2,8 +2,8 @@
 #include <string>
 #include <limits>
 #include "../include/ReservationManager.h"
-#include "Resource.h"
-#include "WaitingList.h"
+#include "../include/Resource.h"
+#include "../include/WaitingList.h"
 
 using namespace std;
 int main() {
