@@ -1,5 +1,6 @@
 #include "../include/ReservationManager.h"
 #include <iostream>
+#include <vector>
 using namespace std;
 
 //constructor
@@ -104,5 +105,13 @@ void ReservationManager::displayReservations() {
 void ReservationManager::displayCancellationHistory() const {
     cancellationHistory.displayHistory();
 }
-//check if resource ID is valid
+// to help with the case-insensitive requirement we can floor the characters
+// by removing the upper case before sorting
+static string toLower(const string& text) {
+
+    string result = text;
+    for (size_t i = 0; i < result.size(); i++){
+        result[i] = (char)tolower((unsigned char) result[i]);
+    }
+}
 

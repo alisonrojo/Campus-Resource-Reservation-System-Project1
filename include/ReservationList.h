@@ -3,6 +3,7 @@
 
 #include "Reservation.h"
 #include <string>
+#include <vector>
 
 using std::string;
 
@@ -37,6 +38,9 @@ public:
     bool find(const string& reservationID, Reservation& outputReservation) const;
     
     bool isBooked(const string& resourceID, const string& date) const;
+
+    //copies every reservation into a vector (used for sorting)
+    void toVector(std::vector<Reservation>& out) const;
 };
 
 #endif

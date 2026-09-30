@@ -154,3 +154,11 @@ bool ReservationList::isBooked(const string& resourceID, const string& date) con
     }
     return false;
 }
+
+void ReservationList::toVector(vector<Reservation>& out) const{
+    const Node* current = head;
+    while (current != nullptr){
+        out.push_back(current->reservation);
+        current = current->next;
+    }
+}
