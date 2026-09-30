@@ -35,6 +35,7 @@ public:
 
     void displayCancellationHistory() const;
     void undoLastCancellation();
+    void displaySortedByStudentName() const;
 
 };
 
