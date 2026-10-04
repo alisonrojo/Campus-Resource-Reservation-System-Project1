@@ -37,6 +37,8 @@ public:
     void undoLastCancellation();
     void displaySortedByStudentName() const;
 
+    //search for a reservation
+    void searchReservation(string reservationID);
 };
 
 #endif
