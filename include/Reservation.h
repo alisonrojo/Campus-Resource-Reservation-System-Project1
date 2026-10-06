@@ -1,7 +1,6 @@
 // standard reservation header that describes a booking
 #ifndef RESERVATION_H
 #define RESERVATION_H
-#include <vector>
 #include <string>
 using std::string; //helps us avoid confusing the compiler with keywords
 
@@ -26,8 +25,6 @@ public:
     string getStudentName() const;
     string getResourceID() const;
     string getReservationDate() const;
-
-    void toVector(std::vector<Reservation>& out) const;
 
 };
 
