@@ -24,6 +24,7 @@ int main() {
         cout << "8. Remove First Waiting Student\n";
         cout << "9. Display Waiting List" << endl;
         cout << "10. Exit" << endl;
+        cout << "11. Display Reservations sorted by Student Name" << endl;
         
 
         cout << "Enter your choice: ";
@@ -155,9 +156,12 @@ int main() {
     else if (choice == 10) {
         cout << "Goodbye!" << endl;
     }
+    else if (choice == 11){
+        manager.displaySortedByStudentName();
+    }
     
     else {
-            cout << "Choose an option from 1 through 10. \n";
+            cout << "Choose an option from 1 through 11. \n";
     }
 
      } while (choice != 10);

@@ -112,6 +112,55 @@ static string toLower(const string& text) {
     string result = text;
     for (size_t i = 0; i < result.size(); i++){
         result[i] = (char)tolower((unsigned char) result[i]);
+
+    }
+    return result;
+}
+static void swapReservations(Reservation& a, Reservation& b){
+    Reservation temp = a;
+    a = b;
+    b = temp;
+
+}
+static void quickSortByStudentName(vector<Reservation>& items, int low, int high) {
+    if(low >= high) return;
+
+    int mid = low +(high - low) / 2;
+    swapReservations(items[mid], items[high]);  // setting the middle pivot to the end
+    string pivot = toLower(items[high].getStudentName());
+
+    int boundary = low; // everything to the left of the pivot 
+    for(int i = low; i < high; i++){
+        if(toLower(items[i].getStudentName()) < pivot) {
+            swapReservations(items[i], items[boundary]);
+            boundary++;
+        }
+    }
+    swapReservations(items[boundary], items[high]);
+
+    quickSortByStudentName(items, low, boundary - 1);
+    quickSortByStudentName(items, boundary + 1, high);
+
+}
+
+void ReservationManager::displaySortedByStudentName() const {
+    vector<Reservation> sorted;
+    reservations.toVector(sorted);
+
+    if (sorted.empty()) {
+        cout << "No reservation to sort. \n";
+        return;
+    }
+
+    quickSortByStudentName(sorted, 0, (int)sorted.size() - 1);
+
+    cout << "\nReservations sorted by student name (A-Z): \n";
+    for (size_t i = 0; i < sorted.size(); i++){
+        cout << "Reservation ID: " << sorted[i].getReservationID() << endl;
+        cout << "Student ID: " << sorted[i].getStudentID() << endl;
+        cout << "Student Name: " << sorted[i].getStudentName() << endl;
+        cout << "Resource ID: " << sorted[i].getResourceID() << endl;
+        cout << "Reservation Date:" << sorted[i].getReservationDate() << endl << endl;
     }
 }
 
