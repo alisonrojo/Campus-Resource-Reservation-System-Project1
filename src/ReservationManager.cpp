@@ -101,7 +101,33 @@ void ReservationManager::undoLastCancellation() {
 void ReservationManager::displayReservations() {
     reservations.display();
 }
+//search for a reservation by reservation ID
+void ReservationManager::searchReservation(string reservationID) {
+    Reservation foundReservation;
 
+    if (reservations.find(reservationID, foundReservation)) {
+        cout << "\nReservation Found:" << endl;
+
+        cout << "Reservation ID: "
+             << foundReservation.getReservationID() << endl;
+
+        cout << "Student ID: "
+             << foundReservation.getStudentID() << endl;
+
+        cout << "Student Name: "
+             << foundReservation.getStudentName() << endl;
+
+        cout << "Resource ID: "
+             << foundReservation.getResourceID() << endl;
+
+        cout << "Reservation Date: "
+             << foundReservation.getReservationDate() << endl;
+       
+    }
+    else {
+         cout << "\nReservation not found." << endl;
+    }
+}
 void ReservationManager::displayCancellationHistory() const {
     cancellationHistory.displayHistory();
 }
