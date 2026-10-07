@@ -23,8 +23,9 @@ int main() {
         cout << "7. Add Student to Waiting List\n";
         cout << "8. Remove First Waiting Student\n";
         cout << "9. Display Waiting List" << endl;
-        cout << "10. Exit" << endl;
+        cout << "10. Search Reservation by ID" << endl;
         cout << "11. Display Reservations sorted by Student Name" << endl;
+        cout << "12. Exit" << endl;
         
 
         cout << "Enter your choice: ";
@@ -154,17 +155,27 @@ int main() {
     }
 
     else if (choice == 10) {
-        cout << "Goodbye!" << endl;
+        string reservationID;
+        
+        cout << "Enter reservation ID to search: ";
+        cin >> reservationID;
+
+        manager.searchReservation(reservationID);  
     }
+        
     else if (choice == 11){
         manager.displaySortedByStudentName();
     }
-    
+
+    else if (choice == 12) {
+         cout << "Goodbye!" << endl;
+    }
+        
     else {
-            cout << "Choose an option from 1 through 11. \n";
+            cout << "Choose an option from 1 through 12. \n";
     }
 
-     } while (choice != 10);
+     } while (choice != 12);
 
     return 0;
 }
