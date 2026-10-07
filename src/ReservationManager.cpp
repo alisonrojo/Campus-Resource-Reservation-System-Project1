@@ -1,6 +1,7 @@
 #include "../include/ReservationManager.h"
 #include <iostream>
 #include <vector>
+#include <cctype> //using tolower()
 using namespace std;
 
 //constructor
