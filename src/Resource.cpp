@@ -47,6 +47,25 @@ void Resource::ReadFile() {
  resources.close();
 }
 
+void Resource::LoadResourcetoVector(vector<Resource>& rVec) const {
+    ifstream rec;
+    rec.open("data/resources.txt");
+    string id;
+    string name;
+    string type;
+    string avl;
+
+    while (getline(rec, id, '|')) {
+        getline(rec, name, '|');
+        getline(rec, type, '|');
+        getline(rec, avl);
+
+        Resource rs(id, name, type, avl);
+        rVec.push_back(rs);
+    }
+    rec.close();
+}
+
 void Resource::DisplayResources() const {
     cout << "Resource ID: " << ResourceID << endl;
     cout << "Resource Name: " << ResourceName << endl;
