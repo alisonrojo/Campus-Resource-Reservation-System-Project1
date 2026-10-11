@@ -26,3 +26,22 @@ void WaitingList::Display() {
     list.pop();
   }
 }
+
+int WaitingList::StudentsWaiting(string resourceID) {
+  queue<string> w;
+  w = WaitingList;
+  string rID;
+  int counter = 0;
+  while (!w.empty()) {
+    string q;
+    int s;
+    q = w.front();
+    s = q.find('|');
+    rID = q.substr(s+2);
+    if (rID == resourceID) {
+        counter += 1;
+    }
+    w.pop();
+  }
+  return counter;
+}
