@@ -3,9 +3,7 @@ Campus Resource Reservation System Project 1
 
 ## Project Description
 
-This C++ application was developed for the first Milestone for our Campus Resource Reservation System project. 
-
-The program demonstrates classes, a linked list for active reservations, a FIFO queue for waiting students, and a LIFO stack for cancellation history.
+This C++ application manages campus resources, reservations, and waiting lists while demonstrating object-oriented programming, searching, sorting, reporting, and data structures. 
 
 ## Team Members
 
@@ -34,7 +32,7 @@ WaitingList.cpp
 main.cpp
 
 ## Features
-The program allows users to view campus resources, create reservations, cancel reservations, and keep track of active reservations. The goal of this project is to practice using classes, linked lists, queues, team collaboration, and other data structures and a real useful program.
+The program allows users to view campus resources, create, cancel, search, and sort reservations, view cancellation history, undo cancellations, and manage student waiting lists. It also supports system reports for active reservations, resource utilization, most requested resources, and waiting-list statistics. The project uses a linked list for active reservations, a FIFO queue for waiting lists, and a LIFO stack for cancellation history.
 
 ## Compile and Run
 
