@@ -36,7 +36,8 @@ The program allows users to view campus resources, create, cancel, search, and s
 
 ## Compile and Run
 
-From the project root on the UNT CELL system or Linux:
+From the project root on the UNT CELL system or Linux: g++ -std=c++17 -Wall -Wextra src/*.cpp -o reservation_app
+./reservation_app
 
 Choose an option from the numbered menu. The program will read the text files if ran from the project root.
 

@@ -154,7 +154,7 @@ bool ReservationList::isBooked(const string& resourceID, const string& date) con
     }
     return false;
 }
-
+// traverses the linked list and appends each reservation to the vector
 void ReservationList::toVector(vector<Reservation>& out) const{
     const Node* current = head;
     while (current != nullptr){

@@ -143,13 +143,17 @@ static string toLower(const string& text) {
     }
     return result;
 }
+// swaps entire reservations so details stay together
 static void swapReservations(Reservation& a, Reservation& b){
     Reservation temp = a;
     a = b;
     b = temp;
 
 }
+// sorts reservations alphabetically by student
+// partitions around a pivot and uses basic functions to recursively sort both sides
 static void quickSortByStudentName(vector<Reservation>& items, int low, int high) {
+    // a section with one or no reservations are already sorted so we can return
     if(low >= high) return;
 
     int mid = low +(high - low) / 2;
@@ -171,6 +175,7 @@ static void quickSortByStudentName(vector<Reservation>& items, int low, int high
 }
 
 void ReservationManager::displaySortedByStudentName() const {
+    // Copy the active reservations into a vector to preserve the linked list's original order
     vector<Reservation> sorted;
     reservations.toVector(sorted);
 
