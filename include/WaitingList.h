@@ -12,6 +12,7 @@ class WaitingList {
     void AddStudent(string student);
     void RemoveStudent();
     void Display();
+    int StudentsWaiting(string resourceID);
 };
 
 #endif
