@@ -25,7 +25,8 @@ int main() {
         cout << "9. Display Waiting List" << endl;
         cout << "10. Search Reservation by ID" << endl;
         cout << "11. Display Reservations sorted by Student Name" << endl;
-        cout << "12. Exit" << endl;
+        cout << "12. Display Resource utilization" << endl;
+        cout << "13. Exit" << endl;
         
 
         cout << "Enter your choice: ";
@@ -168,6 +169,25 @@ int main() {
     }
 
     else if (choice == 12) {
+        vector<Resource> resourceVector;
+        Resource load;
+        load.LoadResourcetoVector(resourceVector);
+        vector<Reservation> rev;
+        manager.LoadReservationsToVector(rev);
+        for (Resource r : resourceVector) {
+            int reservationCounter = 0;
+            for (Reservation re: rev) {
+                if (r.getResourceID() == re.getResourceID()) {
+                    reservationCounter += 1;
+                }
+            }
+            cout << "Resource: " << r.getResourceName() << endl;
+            cout << "Number of Reservations: " << reservationCounter << endl;
+            cout << endl;
+        }
+    }
+
+    else if (choice == 13) {
          cout << "Goodbye!" << endl;
     }
         
@@ -175,7 +195,7 @@ int main() {
             cout << "Choose an option from 1 through 12. \n";
     }
 
-     } while (choice != 12);
+     } while (choice != 13);
 
     return 0;
 }
