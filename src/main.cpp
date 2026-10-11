@@ -196,7 +196,7 @@ int main() {
             int count;
             count = WaitList.StudentsWaiting(q.getResourceID());
 
-            cout << "Resourcce: " << q.getResourceName() << endl;
+            cout << "Resource: " << q.getResourceName() << endl;
             cout << "Number of Students Waiting: " << count << endl;
             cout << endl;
         }
