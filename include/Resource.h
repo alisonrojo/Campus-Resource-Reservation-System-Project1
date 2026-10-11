@@ -18,6 +18,7 @@ class Resource {
     string getResourceType() const;
     string getAvailability() const;
     void ReadFile();
+    void LoadResourcetoVector(vector<Resource>& rvec) const;
     void DisplayResources() const;
 };
 
