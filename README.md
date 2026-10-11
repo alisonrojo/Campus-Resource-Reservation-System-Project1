@@ -32,7 +32,7 @@ WaitingList.cpp
 main.cpp
 
 ## Features
-The program allows users to view campus resources, create, cancel, search, and sort reservations, view cancellation history, undo cancellations, and manage student waiting lists. It also supports system reports for active reservations, resource utilization, most requested resources, and waiting-list statistics. The project uses a linked list for active reservations, a FIFO queue for waiting lists, and a LIFO stack for cancellation history.
+The program allows users to view campus resources, create, cancel, search, and sort reservations, view cancellation history, undo cancellations, and manage student waiting lists. It also supports system reports for active reservations, resource utilization, and waiting-list statistics. The project uses a linked list for active reservations, a FIFO queue for waiting lists, and a LIFO stack for cancellation history.
 
 ## Compile and Run
 
