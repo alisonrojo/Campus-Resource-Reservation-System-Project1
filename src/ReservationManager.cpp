@@ -191,3 +191,6 @@ void ReservationManager::displaySortedByStudentName() const {
     }
 }
 
+void ReservationManager::LoadReservationsToVector(vector<Reservation>& rev) {
+    reservations.toVector(rev);
+}
