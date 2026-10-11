@@ -2,6 +2,7 @@
 #define RESERVATIONMANAGER_H
 
 #include <string>
+#include <vector>
 #include "Reservation.h"
 #include "ReservationList.h"
 #include "CancellationHistory.h"
@@ -39,6 +40,9 @@ public:
 
     //search for a reservation
     void searchReservation(string reservationID);
+
+    //access reservations
+    void LoadReservationsToVector(std::vector<Reservation>& rev);
 };
 
 #endif
