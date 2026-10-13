@@ -191,7 +191,7 @@ int main() {
     else if (choice == 13) {
         vector<Resource> resourceVector;
         Resource load;
-        load.LoadResourcetoVector(resourcceVector);
+        load.LoadResourcetoVector(resourceVector);
         for (Resource q: resourceVector) {
             int count;
             count = WaitList.StudentsWaiting(q.getResourceID());
